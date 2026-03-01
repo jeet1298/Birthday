@@ -110,20 +110,13 @@ Celebrate big today you deserve a year as layered and beautiful as your personal
 </section>
 
 <section>
-<h2>Memories I Appreciate 📸</h2>
+<h2> My personal favourite photos of yours 📸</h2>
 <div class="slider">
 <div class="slide active"><img src="photo1.jpg"></div>
 <div class="slide"><img src="photo2.jpg"></div>
 <div class="slide"><img src="photo3.jpg"></div>
 </div>
 <button onclick="nextSlide()">Next</button>
-</section>
-
-<section>
-<h2>Little Interaction 💖</h2>
-<p>Click the hearts.</p>
-<div id="gameArea"></div>
-<button onclick="startGame()">Start</button>
 </section>
 
 <section>
@@ -173,25 +166,6 @@ const slides=document.querySelectorAll(".slide");
 slides[current].classList.remove("active");
 current=(current+1)%slides.length;
 slides[current].classList.add("active");
-}
-
-/* HEART GAME */
-function startGame(){
-for(let j=0;j<8;j++){
-setTimeout(createHeart,j*600);
-}
-}
-function createHeart(){
-const heart=document.createElement("div");
-heart.innerHTML="❤️";
-heart.className="floatingHeart";
-heart.style.left=Math.random()*90+"%";
-heart.style.top=Math.random()*80+"%";
-heart.onclick=function(){
-heart.remove();
-};
-document.getElementById("gameArea").appendChild(heart);
-setTimeout(()=>heart.remove(),2000);
 }
 
 /* PASSWORD */
